@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title> Interactive Convict Records of Australia </title>
+    <link href="materialize.css" rel="stylesheet" />
+    <link href="css.css" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Niconne" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?&libraries=geometry&key=AIzaSyAB-jOp4eUMP7ledHc8f-_mEhc5dq2U8PI">
+    </script>
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+     <script type="text/javascript"
+    src="https://viralpatel.net/blogs/demo/jquery/jquery.shorten.1.0.js"></script>
+    <script src="javascript/jquery.easing.1.3.js"></script>
+    <script src="javascript/markerAnimate.js"></script>
+    <script src="javascript/SlidingMarker.js"></script>
+    <script src="javascript/CoordinatesRoutesData.js"></script>
+    <script src="javascript/portsData.js"></script>
+    <script>
+    SlidingMarker.initializeGlobally();
+    </script>
+    <script src="javascript/js.js"></script>
+   
+</head>
+
+<body>
+   
+    <div id="map_canvas"></div>
+    
+    <section id=shipNumberinfo>
+     <h1></h1>
+    </section>
+    <aside id="side-panel">
+        <section class="text">
+            <section id="header">
+                <div id="imageheader">
+                </div>
+                <h1> Ship Name </h1>
+                <img id="divider" src="Photos/Backgrounds/divider.png" alt="divider">
+            </section>
+        <div class ="actualtext">
+            <p>Description </p>
+            </div>
+    </section>
+    <section class="images">
+        <div class="arrowLeft__1CK" style="height: 25px; transform: scale(-1, 1);"><div class="ArrowLine__3XA" style="border-top: 1px solid rgb(141, 111, 61); display: inline-block; margin-bottom: 6px; transform: scaleY(0.7);"></div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 16.17" style="height: 25px;"><path d="M28.58,8.08c11.24,0,15.52-4.91,15.52-4.91a30,30,0,0,0,7,4.91,30,30,0,0,0-7,4.91S39.82,8.08,28.58,8.08Z" fill="#e7e7e7" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></path><line x1="35.89" y1="8.09" y2="8.09" fill="none" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></line><path d="M35.89,8.08A19.53,19.53,0,0,0,51.22.5c2.17,4.67,7,7.58,7,7.58s-4.83,2.92-7,7.58A19.53,19.53,0,0,0,35.89,8.08Z" fill="#e7e7e7" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></path><rect x="50.15" y="7.01" width="2.14" height="2.14" transform="translate(9.29 38.59) rotate(-45)" fill="#8d6f3d"></rect></svg></div>
+            <h3> Photos </h3>
+            <div class="arrowRight__3jr" style="height: 25px;"><div class="ArrowLine__3XA" style="border-top: 1px solid rgb(141, 111, 61); display: inline-block; margin-bottom: 6px; transform: scaleY(0.7);"></div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 16.17" style="height: 25px;"><path d="M28.58,8.08c11.24,0,15.52-4.91,15.52-4.91a30,30,0,0,0,7,4.91,30,30,0,0,0-7,4.91S39.82,8.08,28.58,8.08Z" fill="#e7e7e7" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></path><line x1="35.89" y1="8.09" y2="8.09" fill="none" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></line><path d="M35.89,8.08A19.53,19.53,0,0,0,51.22.5c2.17,4.67,7,7.58,7,7.58s-4.83,2.92-7,7.58A19.53,19.53,0,0,0,35.89,8.08Z" fill="#e7e7e7" stroke="#8d6f3d" stroke-miterlimit="10" stroke-width="0.5"></path><rect x="50.15" y="7.01" width="2.14" height="2.14" transform="translate(9.29 38.59) rotate(-45)" fill="#8d6f3d"></rect></svg></div>
+           
+        </section>
+        <div  class="convictContainer">
+                <figure>
+                <img class="myImage materialboxed data-caption="A picture of a way with a group of trees in a park"" width="100" height="100" src="Photos/Neptune_ship.jpg">
+                <figcaption>Test Convict</figcaption>
+            </figure>
+                <p class="myheading">Old uns le as so am inhabiting. Ch
+            considered travelling impression. In excuse hardly summer in basket misery. By rent an part need. At wrong of of water those linen. Needed oppose seemed how all. Very mrs shed shew gave you. Oh shutters do removing reserved wandered an. But described questions for recommend advantage belaaaaaaaa y summer in basket misery. By rent an p</p>
+        </div>
+    </aside>
+     <section class="photos">
+
+        </section>
+    <section id="filterWindow">
+        <div class="filterWindowWrapper">
+        <h1> Convict routes by timeline </h1>
+        <section class="timelineButtons">
+            <button id="1787-1807" class="button greens " type="1780"><span class="timelineButtonText">1787-1807</span></button>
+            <button id="1807-1827" class="button reds" type="1807-1827"><span class="timelineButtonText">1807-1827</span></button>
+            <button id="1827-1847" class="button blues" type="1827-1847"><span class="timelineButtonText">1827-1847</span></button>
+            <button id="1847-1867" class="button blacks" type="1847-1867"><span class="timelineButtonText">1847-1867</span></button>
+        </section>
+        <section class="resetButton">
+            <button  class=" button oranges reset" type="reset"><span class="timelineButtonText">RESET TIME</span></button>
+        </section>
+            <section class="searchContainer" id="searchContainer">
+            <input class="searchbar" type="text" id="searchbar" name="search" placeholder="Search ship">
+
+        </section>
+        </div>
+
+    </section>
+        <section id="navigationBarPort">
+            <div id="navigationButtonWindow">
+                <button class="button" id="previousPort">  
+                        <span href="#" class="innerButton2"> 
+                                    Previous port
+                        </span>
+                        </button>
+            
+                <button class="button" id="exitPort"> <span href="#" class="innerButton2"> 
+                                    Exit
+                        </span> </button>
+                 <button class="button" id="nextPort"><span href="#" class="innerButton2"> 
+                                   Next ship
+                        </span></button>
+            </div>
+        </section>
+        <section id="navigationBarShips">
+            <div id="navigationButtonShipWindow">
+               
+                    <button class="button" id="previousShip">  
+                        <span href="#" class="innerButton2"> 
+                                    Previous ship
+                        </span>
+                        </button>
+                    <button class="button" id="listOfConvicts"><span href="#" class="innerButton2"> 
+                                    List of convicts
+                        </span> </button>
+                    <button class="button" id="exitShip"> <span href="#" class="innerButton2"> 
+                                    Exit
+                        </span> </button>
+                    <button class="button" id="portOfDestination"><span href="#" class="innerButton2"> 
+                                    Port of destination
+                        </span> </button>
+                    <button class="button" id="nextShip"><span href="#" class="innerButton2"> 
+                                   Next ship
+                        </span></button>
+              
+            </div>
+            <div id="ShipInfo">
+                <h1 id=shipName>  </h1>
+                <p id="numberofConvicts"> Number of convicts on board: </p>
+                <p id="shipDestination"> Destination: </p>
+                <p id="shipDateArrival"> Date of Arrival: </p>
+                <p id="speed"> Speed: </p>
+                <p id="totalDistance"> Total distance of the route: </p>
+            </div>
+        </section>
+        <script type="text/javascript" src="javascript/materialize.js"></script>
+        <script src="javascript/waterData.js"></script>
+        <script src="javascript/shipData.js"></script>
+        
+
+</body>
+
+</html>

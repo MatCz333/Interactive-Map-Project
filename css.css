@@ -1,0 +1,403 @@
+ * { box-sizing: border-box;
+	outline: none;
+} 
+
+ html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        font-size:100%; 
+  		line-height:1.5;
+  		font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+
+      }
+#map_canvas {
+  height: 100%;
+  width: 100%;
+  
+}
+button{
+	position: relative;
+}
+
+.filterWindowWrapper{
+	position: absolute;
+	top: 20px;
+	left: 25px;
+	height: 100%;
+	width: 90%;
+}
+#side-panel, #second-panel{
+    height: 100%;
+    width: 30%;
+ 	max-width: 30%;
+ 	display: none;
+ 	margin:auto;
+}
+#loader{
+	position: center;
+}
+#filterWindow {
+	background-image: url("Photos/Frames/timebackground.png");
+    background-size: 100% 100%;
+    height: 30%;
+	min-height: 300px;
+	min-width: 300px;
+	max-width: 800px;
+ 	width: 40%;
+ 	opacity: 0.8;
+}
+.searchContainer{
+	position: absolute;
+	bottom: 16px;
+	width: 45%;
+}
+.searchContainer input[type=text] {
+	height: 50%;
+    width: 100%;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+    font-size: 20px;
+    margin-left: 10px;
+    border: none;
+    outline:none;
+}	
+
+/* When the input field gets focus, change its width to 100% */
+.searchContainer input[type=text]:focus {
+    width: 100%;
+
+}
+#searchbar{
+	background:transparent url("Photos/shipSearchIcon.png") left no-repeat;
+    padding-left: 30px;
+}
+ ::placeholder{
+	color: black;
+}
+
+#filterWindow h1{
+	font-family: 'Niconne', cursive;
+	font-size: 40px;
+	text-align: center;
+}
+input{
+	 border-image: url("Photos/Buttons/searchInputBorder.png") 30 round;
+}
+.timelineButtons{
+  display: flex;
+  justify-content: space-evenly;
+  
+}
+.timelineButtons button{
+	position:relative;
+	background-color: transparent;
+	cursor: pointer;
+	outline:none;
+	background-size: 100% 100%;
+	border: none;
+}
+
+.resetButton{
+  display: flex;
+	margin-top: 2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.reset{
+	font-size: 1rem;
+	background-color: transparent;
+	cursor: pointer;
+	outline:none;
+	background-size: 100% 100%;
+	border: none;
+}
+
+/*.button.active{
+	outline:none;
+	background: url("Photos/Buttons/greenpressedButton.png") no-repeat scroll 0 0 transparent ;
+	background-position: right 5px center;
+	background-size: contain;
+}*/
+.button.focus{
+	outline:none;
+}
+.greens{
+	background-image: url("Photos/Buttons/greenreadyButton.png") ;
+}
+.timelineButtonText{
+	margin: 5px;
+	line-height: calc(100% + 10px);
+	font-size: calc(100% + 1px)
+}
+.reds{
+   background: url("Photos/Buttons/redreadyButton.png") no-repeat scroll 0 0 transparent ;
+}
+.blues{
+	background: url("Photos/Buttons/bluereadyButton.png") no-repeat scroll 0 0 transparent ;
+}
+.blacks{
+	background: url("Photos/Buttons/blackreadybutton.png") no-repeat scroll 0 0 transparent ;
+}
+.oranges{
+	background-image: url("Photos/Buttons/resetbutton.png") ;
+}
+
+#shipNumberinfo{
+	background-image: url("Photos/ShipinfoBackground.png");
+	width: 186px;
+	height: 80px;
+}
+#shipNumberinfo h1{
+	margin: 50px 0px;
+	text-align: center;
+	font-size: 20px;
+}
+#SearchShip {
+	font-size: 40px;
+}
+
+#navigationBarShips, #navigationBarPort{
+	background-color: rgba(255, 255, 255, 0.3);
+	display: none;
+	justify-content: center;
+	align-items: center;
+	position:absolute;
+	bottom: 0%;
+	left:30%;
+	height: 30%;
+	background-image: url("Photos/Frames/shipnavigationbar.png");
+	background-size: 100% 100%;
+}
+#navigationBarPort{
+	background-image: url("Photos/Frames/portnavigationbar.png");
+}
+.photos{
+	position:absolute;
+	bottom: 5%;
+	left:2%;
+	width: 25%;
+	display: flex;
+	visibility: hidden;
+}
+
+#navigationButtonShipWindow button,#navigationBarPort  button{
+    height: 100px;
+    width: 33%;
+	flex-grow: 1;
+	outline: none;
+	cursor: pointer;
+	border: none;
+}
+.innerButton2{
+	 position: absolute;
+	 bottom: 0px;
+}
+.innerButton2{
+	 position: relative;
+	 bottom: -20px;
+	 left: -45px;
+}
+
+#navigationButtonWindow, #navigationButtonShipWindow{
+	height:40%;
+	display: flex;	
+	width: 33%;
+	justify-content: center;
+	align-items: center;
+}
+ #navigationButtonShipWindow {
+ 	width: 70%;
+ 	position: absolute;
+ 	left:100px; right:0;
+ 	top: 40%;
+ 	
+
+ }
+#ShipInfo{
+	position: absolute;
+	right: 20px;
+	width: 20%;
+	height: 100%;	
+}
+#listOfConvicts{
+	background: url("Photos/Buttons/listicon.png") no-repeat scroll 0 0 transparent ;
+}
+#portOfDestination{
+	background: url("Photos/Buttons/pathicon.png") no-repeat scroll 0 0 transparent ;
+}
+#nextShip, #nextPort{
+	background: url("Photos/Buttons/nextship.png") no-repeat scroll 0 0 transparent ;
+}
+#previousShip, #previousPort{
+	background: url("Photos/Buttons/previousship.png") no-repeat scroll 0 0 transparent ;
+}
+#exitShip, #exitPort{
+	background: url("Photos/Buttons/exitship.png") no-repeat scroll 0 0 transparent ;
+}
+#ShipInfo p {
+	font-size: 12px;
+}
+#shipName{
+	text-align: center;
+	font-size: 	17px;
+}
+.text{
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	line-height:1.5;
+	font-family: 'Merriweather', 'Georgia';
+	overflow-y: scroll;
+	height: 70%;
+	font-size: 16px;
+	/*background: yellow;*/
+}
+
+#header{
+	margin: 0px;
+	padding: 0px;
+	height: 25%;
+	width: 100%;
+	/*background: red;*/
+}
+.actualtext{
+	color: rgba(0,0,0,.8);
+	font-size: 17px;
+    letter-spacing: -.004em;
+    line-height: 1.58;
+    margin: 50px 15px 0px 15px;
+    max-width: 700px;
+    padding: 0px 10px 0px 15px;
+    position: relative;
+    text-align: left;
+    
+}
+.actualtext p:first-of-type::first-letter { 
+	border-bottom: 3px solid #937341;
+    font-size: 200%;
+    color: #937341;
+    float: left;
+    font-size: 44px;
+    line-height: 50px;
+    margin: -2px 8px 0;
+    padding: 0 8px 6px 10px;
+}
+#header h1{
+	font-size: 20px;
+	text-align: center;
+	color: rgb(51, 51, 51);;
+	background: -webkit-linear-gradient(bottom, rgb(103, 71, 31), rgb(203, 172, 98));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+	text-transform: uppercase;
+}
+#divider{
+	display:block;
+	margin: 0 auto;
+	max-width: 100%;
+}
+.arrowLeft__1CK, .arrowRight__3jr{
+	display: inline-block;
+	padding: 0 2px;
+}
+#imageheader{
+	margin: 25px auto 0px auto;
+	width: 20%;
+	height:60%;
+	background: url("Photos/Backgrounds/shipheader.png") no-repeat scroll 0 0 transparent ;
+	background-size: cover;
+}
+.convictContainer{
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 5px auto;
+	max-width: 90%;
+	/*align-items: center;*/
+	display: block;
+	font-size: 15px;
+	/*clear:both;*/
+	display: none;
+}
+figure{
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+figcaption{
+	margin-left: 5px;
+}
+.convictContainer img{
+	float:left;
+	border-radius: 50px;
+	border: 2px solid rgba(240,230,140,0.9);
+}
+.convictContainer .myheading{
+	color: rgba(0,0,0,.8);
+	font-size: 15px;
+    letter-spacing: -.004em;
+    line-height: 1.58;
+    margin: 10px 5px 0px 15px;
+    max-width: 700px;
+    padding: 0px 10px 0px 15px;
+    position: relative;
+    text-align: left;
+	
+}
+.convictContainer .myheading::first-letter{
+	border-bottom: 3px solid #937341;
+    font-size: 200%;
+    color: #937341;
+    float: left;
+    font-size: 44px;
+    line-height: 50px;
+    margin: -2px 8px 0;
+    padding: 0 8px 6px 10px;
+
+}
+
+.images{
+	position: relative;
+	text-align: center;
+	height: 30%;
+	width: 100%;
+}
+.photos img{
+	float:left;
+	margin: 10px;
+	border: 2px solid rgba(240,230,140,0.9);
+	border-radius: 5px;
+	cursor: pointer;
+	width: 100px;
+	height: 100px;
+}
+
+.images h3{
+	display: inline-block;
+    font-size: 12px;
+    letter-spacing: 3px;
+    padding: 10px 0 10px 0px;
+    position: relative;
+    text-transform: uppercase;
+    bottom: 7px;
+    text-align: center;
+}
+
+/*ScrollBar values */
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 5px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+/* optional: show position indicator in red */
+::-webkit-scrollbar-thumb {
+    background: rgba(240,230,140,0.9)
+}
+/* creating second class for jquery */
+.hide-scrollbar ::-webkit-scrollbar-thumb{
+    visibility : hidden;
+}

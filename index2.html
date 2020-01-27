@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>     
+  <head>        
+    <title>Geocoding service     
+    </title>          
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />       
+    <meta http-equiv="content-language" content="cs" />         
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">            
+    <link href="css.css" rel="stylesheet">     
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>      
+<script>
+
+function codeAddress(callback) {   
+
+  var address = document.getElementById('address').value;
+  geocoder = new google.maps.Geocoder();
+  geocoder.geocode( { 'address': address}, function(results, status) {
+    if (status == google.maps.GeocoderStatus.OK) {
+    souradnice = [results[0].geometry.location.lat(),results[0].geometry.location.lng()];
+    callback(souradnice);
+  } else {
+      alert('Geocode was not successful for the following reason: ' + status);
+    }
+  });  
+}
+
+
+function gogo(){  
+codeAddress(function(num) {
+  alert(num);
+
+});
+}
+
+
+
+
+
+
+    </script>      
+  </head>     
+  <body>         
+    <div id="panel">             
+      <input id="address" type="textbox" value="address">             
+      <input type="button" value="Go" onclick="gogo()">         
+    </div>         
+    <div id="map-canvas">    
+    </div>     
+  </body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "name": "Mapfolder",
+  "version": "1.1.0",
+  "description": "",
+  "type": "overlay",
+  "format": "png",
+  "minzoom": "0",
+  "maxzoom": "3",
+  "scale": "1.000000",
+  "bounds": [-179.99999859, -76.44969610, 179.96132420, 85.05112878],
+  "profile": "mercator"
+}
